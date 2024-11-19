@@ -1,0 +1,18 @@
+#div{
+    position:relative;
+    left:300px;
+    top:30px;
+
+}
+table,td{
+    border:2px solid black;
+    border-collapse: collapse;
+    padding:10px;
+}
+.tr{
+    font-weight: bold;
+}
+img{
+    height:100px;
+    width:100px;
+}
