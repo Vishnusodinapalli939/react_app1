@@ -4,12 +4,18 @@ import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Table from './table.js'
+import Main from './class.jsx';
+import Obj from './22-11-24/obj.jsx'
+import TableData from './22-11-24/table.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
     <Table/>
+    <Main/>
+    <Obj></Obj>
+    <TableData/>
   </React.StrictMode>
 );
 
