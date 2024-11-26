@@ -14,3 +14,7 @@ code {
 /* h1,p{
   text-align: center;
 } */
+#bscard{
+  position: relative;
+  left:160px;
+}

@@ -2,7 +2,7 @@ import './table.css'
 // import img1 from './images'
 function Table(){
     return(
-        <div id="div">
+        <div id="div123">
             <table>
                 <tr className='tr'>
                     <td>Col 1</td>

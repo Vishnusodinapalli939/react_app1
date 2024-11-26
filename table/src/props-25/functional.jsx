@@ -5,7 +5,7 @@ function FunctionProps(props){
         <div>
             
             <h1>hello {props.name} from {props.city}</h1>
-            {console.log(props.children,"hii")}
+            {/* {console.log(props.children,"hii")} */}
             {props.children.map((a,b)=>{
                 return(
                     <ul key={b}>
