@@ -13,6 +13,8 @@ import App2 from './props-25/funtway2.jsx';
 import ProductsCard from './bootstrap/card.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductsAccordion from './bootstrap/accordin.jsx';
+import CondRend from './conditional_rendering/conditional.jsx';
+import Counter from './states/class/counter.jsx';
 
 const products=[
   {
@@ -263,6 +265,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
+    <Counter/>
+    
+   <CondRend login="admin" isLoggedIn={true}/>
     <h1 style={{textAlign:"center"}}>Bootstrap Accordions Task[26-11-24]</h1>
     <div>
       {products.map((a,b)=>{
