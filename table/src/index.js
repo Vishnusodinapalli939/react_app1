@@ -15,6 +15,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductsAccordion from './bootstrap/accordin.jsx';
 import CondRend from './conditional_rendering/conditional.jsx';
 import Counter from './states/class/counter.jsx';
+import Toggle from './states/class/toggle.jsx';
+import BsTable from './bootstrap/bstable.jsx';
 
 const products=[
   {
@@ -265,9 +267,18 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
+    <Toggle/>
     <Counter/>
-    
    <CondRend login="admin" isLoggedIn={true}/>
+   <div>
+    <h1 style={{textAlign:"center"}}>Bootstrap Table Task[28-11-24]</h1>
+    {products.map((a,b)=>{
+      return(
+        <BsTable data={a}/>
+      )
+    })}
+   </div>
+   
     <h1 style={{textAlign:"center"}}>Bootstrap Accordions Task[26-11-24]</h1>
     <div>
       {products.map((a,b)=>{

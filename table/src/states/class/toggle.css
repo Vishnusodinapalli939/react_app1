@@ -1,0 +1,14 @@
+.switchon{
+    background-color: red;
+    color:white;
+}
+.switchoff{
+    background-color: green;
+    color:white;
+}
+.texton{
+    color:green;
+}
+.textoff{
+    color:red;
+}
