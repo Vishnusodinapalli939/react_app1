@@ -17,6 +17,7 @@ import CondRend from './conditional_rendering/conditional.jsx';
 import Counter from './states/class/counter.jsx';
 import Toggle from './states/class/toggle.jsx';
 import BsTable from './bootstrap/bstable.jsx';
+import Todo from './todo/todo.jsx';
 
 const products=[
   {
@@ -267,6 +268,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
+    <Todo/>
     <Toggle/>
     <Counter/>
    <CondRend login="admin" isLoggedIn={true}/>
