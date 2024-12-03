@@ -28,6 +28,7 @@ class Todo extends React.Component{
     render(){
         return(
             <div>
+                <h1 style={{textAlign:"center"}}>Todo List [2-12-24]</h1>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" name="todo" value={this.state.todo} onChange={this.handleChange}/>
                     <input type="submit"/>
@@ -36,7 +37,7 @@ class Todo extends React.Component{
             <ul>
                 {this.state.list.map((a,b)=>{
                     return(
-                        <li key={b}>{a}<button>Edit</button><button  onClick={()=>{this.deleterHandler(b)}}>Delete</button></li>
+                        <li key={b}>{a}<button>Edit</button><button onClick={()=>{this.deleterHandler(b)}}>Delete</button></li>
                     )
                 })}
             </ul>

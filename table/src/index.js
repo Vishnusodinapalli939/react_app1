@@ -18,6 +18,7 @@ import Counter from './states/class/counter.jsx';
 import Toggle from './states/class/toggle.jsx';
 import BsTable from './bootstrap/bstable.jsx';
 import Todo from './todo/todo.jsx';
+import MountingComp from './lifecycle/mounting/mounting.jsx';
 
 const products=[
   {
@@ -268,6 +269,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
+    <MountingComp/>
     <Todo/>
     <Toggle/>
     <Counter/>
