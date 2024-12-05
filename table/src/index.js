@@ -19,6 +19,8 @@ import Toggle from './states/class/toggle.jsx';
 import BsTable from './bootstrap/bstable.jsx';
 import Todo from './todo/todo.jsx';
 import MountingComp from './lifecycle/mounting/mounting.jsx';
+import UpdatingComp from './lifecycle/mounting/updatingPhase/updating.jsx';
+import UsestateComp from './states/functions/funcCount.jsx';
 
 const products=[
   {
@@ -269,6 +271,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
+    <UsestateComp/>
+    <UpdatingComp color="green"/>
     <MountingComp/>
     <Todo/>
     <Toggle/>
