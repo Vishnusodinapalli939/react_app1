@@ -28,61 +28,118 @@ it has 5 phases
 
 
 */
-class UpdatingComp extends React.Component{
-    constructor(props){
-        super(props);
-        this.state={count:0,product:null,color:"red"}
+class UpdatingComp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0, product: null, color: "red" };
+  }
+  inc = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+  dec = () => {
+    this.setState({ count: this.state.count - 1 });
+  };
+  val = (a) => {
+    this.setState({ count: this.state.count + a });
+  };
+  reset = () => {
+    this.setState({ count: 0 });
+  };
+  static getDerivedStateFromProps(props, state) {
+    return { color: props.color };
+    // return null;
+  }
+  componentDidUpdate(prevProps, prevState) {
+    // console.log(prevState,"updating")
+    // console.log(prevProps,"props")
+    if (prevState.count !== this.state.count) {
+      axios
+        .get(`https://fakestoreapi.com/products/${this.state.count}`)
+        .then((res) => {
+          this.setState({ product: res.data });
+          // console.log(res)
+        });
     }
-    inc=()=>{
-        this.setState({count:this.state.count+1})
+  }
+  shouldComponentUpdate(nextprops, nextState) {
+    if (this.state.count >= 20) {
+      return false;
+    } else {
+      return true;
     }
-    dec=()=>{
-        this.setState({count:this.state.count-1})
-    }
-    static getDerivedStateFromProps(props,state){
-        return {color:props.color}
-        // return null;
-    }
-    componentDidUpdate(prevProps,prevState){
-        // console.log(prevState,"updating")
-        // console.log(prevProps,"props")
-        if(prevState.count!==this.state.count){
-        axios.get(`https://fakestoreapi.com/products/${this.state.count}`).then((res) => {
-            this.setState({ product: res.data });
-            // console.log(res)
-          });}
-    }
-    shouldComponentUpdate(nextprops,nextState){
-        if(this.state.count>=5){
-            return false
-        }
-        else{
-            return true
-        }
+  }
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log(prevState.count, "snapshot");
+    return null;
+  }
 
-    }
-    getSnapshotBeforeUpdate(prevProps,prevState){
-        console.log(prevState.count,"snapshot");
-        return null;
-
-    }
-   
-    render(){
-        const{count,product,color}=this.state
-        // console.log(product)
-        return(
-            <div style={{display:"flex", flexDirection:"column" ,gap:"10px", justifyContent:"center" }}>
-                <div>
-                <h1 style={{color:color}}>{count}</h1>
-                <button onClick={this.inc}>Inc</button>
-                <button onClick={this.dec} disabled={count<1}>Dec</button>
-                </div>
-                <div>
-                {product?<h1><ProductsCard data={product}/></h1>:<Loader/>}
-                </div>
-                
-            </div>
-        )
-    }
+  render() {
+    const { count, product, color } = this.state;
+    // console.log(product)
+    return (
+      <div>
+        <h1 style={{ textAlign: "center" }}>Updating Phase</h1>
+        <div style={{}}>
+          <span style={{display:"flex",justifyContent:"center"}}>
+            <h1 style={{ color: color }}>{count}</h1>
+          </span>
+          <span style={{display:"flex",justifyContent:"center"}}>
+            <button onClick={this.inc}>Inc</button>
+            <button onClick={this.dec} disabled={count < 1}>
+              Dec
+            </button>
+          </span>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "10px",
+            padding: "10px",
+          }}
+        >
+          <button
+            onClick={() => {
+              this.val(3);
+            }}
+          >
+            3
+          </button>
+          <button
+            onClick={() => {
+              this.val(4);
+            }}
+          >
+            4
+          </button>
+          <button
+            onClick={() => {
+              this.val(5);
+            }}
+          >
+            5
+          </button>
+          <button
+            onClick={() => {
+              this.val(6);
+            }}
+          >
+            6
+          </button>
+          <button
+            onClick={() => {
+              this.val(7);
+            }}
+          >
+            7
+          </button>
+          <button onClick={this.reset}>Reset</button>
+        </div>
+        <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
+          {product ? <ProductsCard data={product} /> : <Loader />}
+        </div>
+      </div>
+    );
+  }
 }
 export default UpdatingComp;
