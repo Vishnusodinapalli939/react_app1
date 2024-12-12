@@ -20,6 +20,8 @@ import UpdatingComp from './lifecycle/mounting/updatingPhase/updating.jsx';
 import UsestateComp from './states/functions/funcCount.jsx';
 import Calculator from './tasks/calculator.jsx';
 import FormData from './states/functions/form.jsx';
+import LoginApi from './apicalls/loginapi'
+import EffectComp from './states/functions/useeffect';
 const products=[
   {
     "id": 1,
@@ -267,6 +269,10 @@ const products=[
 function App() {
   return (
     <div className="App">
+      <h1 style={{textAlign:"center"}}>UseEffect add to cart couting </h1>
+       <EffectComp/>
+
+<LoginApi/>
       <h1 style={{textAlign:"center"}}>Form Data BS modal</h1>
        <FormData/>
     <h1 style={{textAlign:"center"}}>Basic Calculator Task using useState</h1>
@@ -333,6 +339,4 @@ function App() {
      </div>
   );
 }
-
-
 export default App;
