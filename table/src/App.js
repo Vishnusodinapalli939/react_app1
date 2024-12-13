@@ -269,6 +269,8 @@ const products=[
 function App() {
   return (
     <div className="App">
+     
+
       <h1 style={{textAlign:"center"}}>UseEffect add to cart couting </h1>
        <EffectComp/>
 

@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 function ProductsCard(props) {
     // {console.log(props)}
@@ -22,7 +23,10 @@ function ProductsCard(props) {
         </div>
      
       </Card.Body>
-      <Card.Footer className="text-muted"><Button variant="primary">{props.data.category}</Button></Card.Footer>
+      <Card.Footer className="text-muted" style={{display:"flex",justifyContent:"space-between"}}>
+      <Link to="/products"><Button variant="primary">Back</Button></Link>
+        <Button variant="primary">{props.data.category}</Button>
+        </Card.Footer>
     </Card>
   );
 }
