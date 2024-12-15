@@ -26,15 +26,17 @@ root.render(
       <div style={{ display: "flex", justifyContent: "space-evenly" }}>
         <Link className="link" to="/home">Home</Link>
         <Link className="link" to="/products">Products</Link>
+        <Link className="link" to="/remaining">Remaining tasks</Link>
       </div>
       <Routes>
         <Route path="/home" element={<Home/>}></Route>
         <Route path="/products" element={<ProductList/>}/>
         <Route path="/products/:id" element={<ProductDetails/>}/> 
+        <Route path='/remaining' element={<App/>}/>
       </Routes>
     </Router>
 
-  
+  {/* <App/> */}
     {/* movie list using Dynamic Routing */}
     {/* <Router>
       <div style={{ display: "flex", justifyContent: "space-evenly" }}>
