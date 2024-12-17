@@ -22,6 +22,8 @@ import Calculator from './tasks/calculator.jsx';
 import FormData from './states/functions/form.jsx';
 import LoginApi from './apicalls/loginapi'
 import EffectComp from './states/functions/useeffect';
+import CallbackHook from './states/functions/usecallback.jsx';
+import MemoHook from './states/functions/usememo.jsx';
 const products=[
   {
     "id": 1,
@@ -269,8 +271,9 @@ const products=[
 function App() {
   return (
     <div className="App">
-     
-
+      <h1>Usememo and Usecallback</h1>
+      <MemoHook/>
+      <CallbackHook/>
       <h1 style={{textAlign:"center"}}>UseEffect add to cart couting </h1>
        <EffectComp/>
 

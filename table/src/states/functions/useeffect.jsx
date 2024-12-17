@@ -1,3 +1,18 @@
+/*
+useMemo Hook :
+  --The useMemo hook memoizes the return value of an expensive calculation between renders.
+  --Memoizing means storing the value as a cached value so that the value need not be calculated again
+  --useMemo is a hook used for optimising the performance of your renders. Normally, when you declare a variable inside a component, 
+    it gets re-created on every render.
+
+useCallback Hook :
+  --it memoizes a callback function and returns it.
+  --useMemo caches the functions return value so that the function need not execute again. 
+
+
+
+*/
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Button from 'react-bootstrap/Button';
